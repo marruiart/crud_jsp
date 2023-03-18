@@ -1,0 +1,482 @@
+/********* ESTILOS GENERALES *********/
+
+/* @font-face {
+    font-family: old-school;
+    src: url(../fonts/VT323-Regular.ttf);
+} */
+
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+}
+
+:root {
+    --principal: #3A579B;
+    --secondary: #F14C3A;
+    --dark: #11192c;
+    --semidark: #3d3d3d;
+    --light: #fdfdfd;
+    --emphasis: #F3A712;
+}
+
+body.container {
+    display: grid;
+    height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+h2 {
+    margin-top: 2rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+p {
+    padding: 1rem 0;
+}
+
+/* GRID DISPLAY */
+
+body.container {
+    grid-template-rows: auto auto 1fr 4rem;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+header {
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 12;
+}
+
+nav {
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 12;
+}
+
+main {
+    grid-row: 3 / span 1;
+    grid-column: 1 / span 12;
+}
+
+footer {
+    grid-row: 4 / span 1;
+    grid-column: 1 / span 12;
+}
+
+/********* HEADER *********/
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--principal);
+    color: white;
+    padding: 2.5rem 1rem;
+}
+
+header h1 {
+    font-size: 4rem;
+    text-shadow: 5px 5px 10px #000000;
+}
+
+/********* NAV *********/
+
+nav {
+    height: 4rem;
+    width: 100%;
+    background-color: var(--principal);
+    color: white;
+}
+
+nav div {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    height: 100%;
+    width: 60%;
+}
+
+nav div a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+nav div a:hover {
+    background-color: var(--secondary);
+}
+
+/********* MAIN *********/
+
+.main-landing {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 2rem 5%;
+    background-color: var(--light);
+    text-align: center;
+    height: 70vh;
+}
+
+.students-landing,
+.groups-landing,
+.enroll-landing {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 7rem 5%;
+    background-color: var(--light);
+    text-align: center;
+    height: auto;
+}
+
+.main-landing form {
+    display: flex;
+    align-items: center;
+    height: 30%;
+    width: 100%;
+}
+
+.main-landing form {
+    width: 50%;
+}
+
+.main-landing form:last-child {
+    width: 100%;
+}
+
+.btn-gest-student,
+.btn-gest-group {
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+}
+
+.btn-gest-student h2,
+.btn-gest-group h2 {
+    margin: 2rem 0 3rem;
+}
+
+.main-landing button img {
+    height: 70%;
+    width: 100%;
+    filter: drop-shadow(5px 5px 2px var(--semidark));
+}
+
+.main-landing button:hover img {
+    filter: drop-shadow(3px 3px 1px var(--dark));
+}
+
+.main-landing button:active img {
+    filter: none;
+}
+
+/* TABLAS */
+
+.table:not(.table-enroll) {
+    color: var(--dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-width: 564px;
+}
+
+.table .tr {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 3em;
+    width: 100%;
+    background-color: var(--light);
+    border-bottom: 1px solid var(--principal);
+    border-right: 1px solid var(--principal);
+    border-left: 1px solid var(--principal);
+}
+
+
+.table .th,
+.table .tr-add {
+    border: none;
+}
+
+.table .tr-add,
+.table .tr-add.tr .td,
+.table .tr-add.tr .td form {
+    justify-content: flex-end;
+}
+
+.table .th {
+    font-weight: bold;
+    font-size: 1.2em;
+    background-color: var(--principal);
+    color: var(--light);
+    border-radius: 10px 10px 0 0;
+}
+
+.table .tr .td:last-child {
+    width: 60%;
+    min-width: 8rem;
+}
+
+.table .tr .td {
+    display: flex;
+    justify-content: space-evenly;
+    column-gap: 5%;
+    width: 100%;
+    min-width: 6rem;
+}
+
+.btn.btn-add {
+    align-items: flex-end;
+}
+
+.div-enroll {
+    position: relative;
+    column-gap: 200px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 3rem;
+}
+
+.form-enroll {
+    min-width: 470px;
+    max-width: 700px;
+    width: calc(50% - 3rem);
+}
+
+.form-enroll label {
+    display: block;
+    width: 100%;
+}
+
+.form-enroll .search-label span {
+    display: inline-block;
+    width: 4rem;
+}
+
+.search-box,
+.search-group {
+    width: 60%;
+    margin-bottom: 2rem;
+    padding: 0.2rem 0.5rem;
+    border: 1px solid var(--dark);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #f1f5ff;
+    color: var(--semidark);
+}
+
+.table-enroll {
+    width: 100%;
+}
+
+.table.table-enroll .tr:not(.th) {
+    justify-content: flex-start;
+}
+
+.table.table-enroll .tr:not(.th) [type="checkbox"] {
+    width: 2rem;
+}
+
+/* FICHAS */
+
+.file {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 60%;
+}
+
+.file .form-th {
+    width: 100%;
+    padding: 1rem 0;
+    font-weight: bold;
+    font-size: 1.2em;
+    background-color: var(--principal);
+    color: var(--light);
+    border-radius: 10px 10px 0 0;
+}
+
+.file label {
+    width: 100%;
+    padding: 0.5rem 10%;
+    border-bottom: 1px solid var(--principal);
+    border-right: 1px solid var(--principal);
+    border-left: 1px solid var(--principal);
+}
+
+.file label span {
+    display: inline-block;
+    width: 25%;
+    font-weight: bold;
+    text-align: left;
+}
+
+.file label input,
+.file label select {
+    width: 60%;
+    padding: 0.2rem 0.5rem;
+    margin: 0;
+    border: 1px solid var(--dark);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #f1f5ff;
+    color: var(--semidark);
+}
+
+.file label input:disabled,
+.file label select:disabled {
+    border: 1px solid transparent;
+    background-color: transparent;
+}
+
+.file label select:disabled {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.file label select:disabled::-ms-expand {
+    display: none;
+}
+
+.file .form-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 2rem 20% 0;
+    margin-bottom: 2rem;
+}
+
+.file .form-buttons div {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.warn, .okay {
+    margin: 1rem 0;
+    padding: 0.5rem;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.warn {
+    background-color: #ffb1a8;
+}
+
+.okay {
+    background-color: rgb(177, 211, 177);
+}
+
+/* BOTONES */
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+.btn {
+    min-width: 2rem;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 3px solid var(--secondary);
+    border-radius: 20px;
+    filter: drop-shadow(4px 4px 2px #a8a8a8);
+}
+
+.btn.unenroll {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50% 0 0 50%;
+    padding-left: 2rem;
+    width: 10rem;
+}
+
+.btn.enroll {
+    position: absolute;
+    top: 200px;
+    right: 50%;
+    transform: translateX(50%);
+    border-radius: 0 50% 50% 0;
+    padding-right: 2rem;
+    width: 10rem;
+}
+
+.btn:hover {
+    cursor: pointer;
+    filter: drop-shadow(2px 2px 1px #6b6b6b);
+}
+
+.btn:active {
+    filter: none;
+}
+
+.icon {
+    min-width: 2rem;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.icon i {
+    color: var(--principal);
+    text-shadow: 3px 3px 2px #a8a8a8;
+}
+
+.icon.btn-delete i {
+    color: var(--secondary);
+}
+
+.icon:hover i {
+    color: var(--emphasis);
+    text-shadow: 1px 1px 2px var(--dark);
+    cursor: pointer;
+}
+
+.icon:active i {
+    text-shadow: 0.5px 0.5px 1px var(--dark);
+}
+
+/********* FOOTER *********/
+
+footer {
+    font-size: 1rem;
+    background-color: var(--principal);
+    color: var(--light);
+    padding: 0.5rem 1rem;
+    min-height: min-content;
+}
+
+footer small,
+footer small>* {
+    font-size: 0.8rem;
+}
